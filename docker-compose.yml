@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./api:var/www/api
+      - ./devops/config/nginx-api.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - api
+
+  api:
+    build:
+      args:
+        user: sami
+        uid: 1000
+      context: ./api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./api:/var/www/api
+      - ./devops/local/config/php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./devops/local/config/php-fpm/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+
+
+
