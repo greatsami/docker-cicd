@@ -185,6 +185,8 @@
       <path value="$PROJECT_DIR$/api/vendor/aws/aws-crt-php" />
       <path value="$PROJECT_DIR$/api/vendor/pharaonic/laravel-readable" />
       <path value="$PROJECT_DIR$/api/vendor/ed9/laravel-date-directive" />
+      <path value="$PROJECT_DIR$/api/vendor/rennokki/laravel-eloquent-query-cache" />
+      <path value="$PROJECT_DIR$/api/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
