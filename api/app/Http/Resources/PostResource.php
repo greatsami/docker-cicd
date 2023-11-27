@@ -11,15 +11,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property string $title
  * @property string $headline
  * @property string $content
- * @property boolean $is_published
+ * @property bool $is_published
  * @property Carbon $publish_at
  */
 class PostResource extends JsonResource
 {
-    /**
-     * @param Request $request
-     * @return array
-     */
     public function toArray(Request $request): array
     {
         return [

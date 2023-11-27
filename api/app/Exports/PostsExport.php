@@ -8,18 +8,13 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\Exportable;
-use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class PostsExport implements FromQuery, WithHeadings, ShouldQueue
+class PostsExport implements FromQuery, ShouldQueue, WithHeadings
 {
     use Exportable;
 
-
-    /**
-     * @return Builder|Relation|\Illuminate\Database\Query\Builder
-     */
     public function query(): Relation|Builder|\Illuminate\Database\Query\Builder
     {
         return Post::query()

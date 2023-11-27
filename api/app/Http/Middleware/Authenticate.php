@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Ed9\LaravelDateDirective\Handler;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Illuminate\Http\Request;
 
@@ -27,7 +26,7 @@ class Authenticate extends Middleware
             /** @phpstan-ignore-next-line */
             $handler->setTimezone($user->timezone);
         }
+
         return parent::handle($request, $next);
     }
-
 }

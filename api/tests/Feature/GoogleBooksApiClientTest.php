@@ -2,8 +2,8 @@
 
 use App\Services\ApiRequest;
 use App\Supports\GoogleBooksApiClient;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\Http;
 
 beforeEach(function () {
     Http::fake();

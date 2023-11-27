@@ -181,5 +181,4 @@ final class ApiRequest
     {
         return new static(HttpMethod::DELETE, $uri);
     }
-
 }

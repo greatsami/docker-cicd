@@ -14,6 +14,7 @@ class QueryBooksByTitle
         $request = ApiRequest::get('volumes')
             ->setQuery('q', 'intitle:'.$title)
             ->setQuery('printType', 'books');
+
         return $client->send($request);
     }
 }

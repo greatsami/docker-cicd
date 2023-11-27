@@ -6,10 +6,17 @@ use App\Events\PostPublishedEvent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Rennokki\QueryCache\Traits\QueryCacheable;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, QueryCacheable;
+
+    public int $cacheFor = 3600;
+
+    public array $cacheTags = ['posts'];
+
+    protected static bool $flushCacheOnUpdate = true;
 
     protected $guarded = [];
 

@@ -5,7 +5,6 @@ namespace App\Jobs;
 use App\Models\User;
 use App\Notifications\ExportCompletedNotification;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -19,9 +18,10 @@ class NotifyUserAboutCompletedExportJob implements ShouldQueue
      * Create a new job instance.
      */
     public function __construct(
-        public User             $user,
+        public User $user,
         private readonly string $fileLink,
-    ) {}
+    ) {
+    }
 
     /**
      * Execute the job.

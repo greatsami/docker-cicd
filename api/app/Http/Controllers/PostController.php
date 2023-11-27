@@ -66,7 +66,7 @@ class PostController extends Controller
 
         $path = "public/exports/posts-$date.xlsx";
 
-        $link = url()->to('/') . Storage::url($path);
+        $link = url()->to('/').Storage::url($path);
 
         (new PostsExport())->store($path)->chain([
             new NotifyUserAboutCompletedExportJob($request->user(), $link),
