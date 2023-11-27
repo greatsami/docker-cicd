@@ -35,7 +35,11 @@ jobs:
           composer-
 
     - name: Install PHP
+<<<<<<< HEAD
     - uses: shivammathur/setup-php@v3
+=======
+      uses: shivammathur/setup-php@v3
+>>>>>>> f4850a9 (update)
       with:
         php-version: 8.1
 
