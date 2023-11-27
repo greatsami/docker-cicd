@@ -35,9 +35,9 @@ jobs:
           composer-
 
     - name: Install PHP
-      uses: shivammathur/setup-php@v3
+      uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
       with:
-        php-version: 8.1
+        php-version: 8.2
 
     - name: Install composer dependencies
       run: |
