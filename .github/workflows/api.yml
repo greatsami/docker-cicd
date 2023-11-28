@@ -1,4 +1,4 @@
-name: First pipeline
+name: Laravel pipeline
 on:
   push:
     branches: [ "main" ]
